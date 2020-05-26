@@ -3,11 +3,22 @@
 #include <cmath>
 #include <cstdlib>
 
-TEST(Easy_1_3, abs)
+TEST(Easy_1_3, absFromNegative)
 {
     ASSERT_EQ(Abs(-1), 1);
+    ASSERT_EQ(Abs(-1.5), 1.5);
+}
+
+TEST(Easy_1_3, absFromZero)
+{
+    ASSERT_EQ(Abs(0.0), 0);
     ASSERT_EQ(Abs(0),0);
-    ASSERT_EQ(Abs(1.5), 1.5);
+}
+
+TEST(Easy_1_3, absFromPositive)
+{
+    ASSERT_EQ(Abs(1), 1);
+    ASSERT_EQ(Abs(7.5), 7.5);
 }
 
 TEST(Easy_1_3, sin)

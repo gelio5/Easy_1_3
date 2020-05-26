@@ -2,4 +2,4 @@
 #include <iostream>
 
 double Abs(double val) noexcept;
-double Sin(double x);
+double Sin(double val);

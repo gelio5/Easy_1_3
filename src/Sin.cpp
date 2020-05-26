@@ -8,17 +8,17 @@ double Abs(double val) noexcept
 
 }
 
-double Sin(double x)
+double Sin(double val)
 {
-    double eps = 0.0000000001;
-    double k, a = x;
-    double s = x;
-    int n=1;
-    while (Abs(a) > eps) {
-        k = - x * x / (2 * n * (2 * n + 1));
-        a *= k;
-        s += a;
-        n++;
+    double accuracy = 0.0000000001;
+    double rowElement, deviation = val;
+    double sinus = val;
+    int powCounter=1;
+    while (Abs(deviation) > accuracy) {
+        rowElement = - val * val / (2 * powCounter * (2 * powCounter + 1));
+        deviation *= rowElement;
+        sinus += deviation;
+        powCounter++;
     }
-    return s;
+    return sinus;
 }
